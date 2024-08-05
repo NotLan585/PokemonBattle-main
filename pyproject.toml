@@ -1,0 +1,43 @@
+[tool.poetry]
+name = "PokemonBattleSimulator"
+version = "1.0.0"
+description = "To battle pokemon and write the stats of the outcome"
+authors = ["Ian Allheim <ian.allheim@gmail.com>"]
+
+[tool.pytest.ini_options]
+log_cli = true
+log_cli_level = "INFO"
+
+[tool.poetry.dependencies]
+python = "^3.7"
+pytest-playwright = "^0.3.0"
+pytest = "^6.2.0"
+python-slugify = "^6.1.1"
+python-dotenv = "^0.20.0"
+types-python-slugify = "^5.0.4"
+pyotp = "^2.6.0"
+pytest-xdist = "^2.5.0"
+pytest-flakefinder = "^1.0.0"
+
+[tool.poetry.dev-dependencies]
+pytest-bdd = "^5.0.0"
+black = "^22.3.0"
+mypy = "^0.942"
+tox = "^3.25.0"
+isort = "^5.10.1"
+
+[tool.black]
+line-length = 120
+
+[tool.mypy]
+python_version = "3.7"
+warn_return_any = true
+warn_unused_configs = true
+
+[[tool.mypy.overrides]]
+module = "pytest_bdd.*"
+ignore_missing_imports = true
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
